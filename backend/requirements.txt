@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary # Driver PostgreSQL
+pydantic
+crewai
+crewai-tools
+python-dotenv # Para variáveis de ambiente
