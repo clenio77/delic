@@ -1,0 +1,12 @@
+[
+    {
+        "id": "licitacao_1234567890",
+        "objeto": "Aquisição de computadores para modernização do parque tecnológico.",
+        "data_abertura": "25/07/2024",
+        "prazo_proposta": "10 dias",
+        "valor_estimado": 150000.0,
+        "requisito_habilitacao_principal": "Certidão Negativa de Débitos Federais",
+        "resumo": "O edital trata da aquisição de computadores para atualizar o parque tecnológico, com propostas abertas em 25/07/2024 e prazo de entrega de 10 dias. Requer Certidão Negativa de Débitos Federais para habilitação.",
+        "link_original": "https://www.comprasnet.gov.br/seguro/licitacao_portal_detalhe.asp?coduasg=999999&numprp=1234567890&tipo=Preg%E3o&Origem=Portal&TipoEnvio=A&numitem=1&ordenador=1"
+    }
+]

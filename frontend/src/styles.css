@@ -1,0 +1,54 @@
+/* Estilos básicos para o corpo da página */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Estilos para o cabeçalho da aplicação */
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Contêiner para a lista de licitações */
+.licitacoes-list {
+  display: grid; /* Usa Grid para organizar os cards */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Colunas responsivas */
+  gap: 20px; /* Espaço entre os cards */
+}
+
+/* Estilos para cada card de licitação */
+.licitacao-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #007bff; /* Uma borda colorida para destaque */
+}
+
+.licitacao-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.licitacao-card p {
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.licitacao-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.licitacao-card a:hover {
+  text-decoration: underline;
+}

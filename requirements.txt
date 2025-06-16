@@ -1,0 +1,11 @@
+crewai==0.28.8
+crewai-tools==0.1.6
+python-dotenv
+fastapi
+uvicorn
+playwright
+beautifulsoup4
+pandas
+openai # ou google-generativeai, dependendo do LLM
+pypdf # NOVO: para extração de PDF
+python-docx # NOVO: para extração de DOCX
