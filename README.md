@@ -1,4 +1,4 @@
-# Correios Licitações MVP
+# Correios Licitações 
 
 Sistema MVP para monitoramento, análise e exibição de licitações dos Correios, com backend FastAPI, frontend React e pipeline de processamento automatizado.
 
