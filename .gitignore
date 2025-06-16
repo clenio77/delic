@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.venv/
+venv/
+.env
+.env.*
+
+# VSCode
+.vscode/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/build/
+
+# Logs
+*.log
+
+# Dados temporários e arquivos de execução
+*.sqlite3
+*.db
+*.pid
+*.swp
+*.swo
+
+# Docker
+*.pid
+*.sock
+docker-compose*.yml
+
+# Dados sensíveis e arquivos de exemplo
+backend/data/processed_licitacoes.json
+backend/data/raw_licitacoes/*
+!backend/data/raw_licitacoes/.gitkeep
+
+# Outros
+.DS_Store
+Thumbs.db 
