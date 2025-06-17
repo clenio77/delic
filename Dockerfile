@@ -18,6 +18,7 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend/ ./backend/
+COPY backend/data /app/backend/data
 #COPY .env.example ./
 
 # Copy the built frontend assets from the builder stage
