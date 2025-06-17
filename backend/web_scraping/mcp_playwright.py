@@ -5,9 +5,9 @@ import time
 
 def download_licitacao_edital(url: str, download_path: str = "backend/data/"):
     """
-    Navega até a URL da licitação e tenta baixar o edital.
-    Assume uma estrutura simples onde o link de download pode ser clicado.
-    Para o Comprasnet, a complexidade pode variar. Este é um exemplo simplificado.
+    Faz o download do edital a partir de uma URL ou retorna o caminho se for um arquivo local.
+    - Se 'url' for um caminho local, retorna imediatamente.
+    - Se for uma URL, usa Playwright para baixar o arquivo.
     """
     # Se for um arquivo local já existente, apenas retorna o caminho
     if os.path.isfile(url):
@@ -49,9 +49,9 @@ def download_licitacao_edital(url: str, download_path: str = "backend/data/"):
 def search_new_licitacoes_comprasnet(search_url: str = "https://www.comprasnet.gov.br/seguro/indexportal.asp",
                                     download_path: str = "backend/data/raw_licitacoes"):
     """
-    Navega no Comprasnet (exemplo simplificado da busca) e coleta URLs de licitações.
-    ESTE É UM SIMPLIFICAÇÃO INTENSA! O Comprasnet é complexo.
-    Para o MVP, pode-se começar com URLs fixas ou uma busca muito específica.
+    Simula a busca de novas licitações no Comprasnet.
+    Retorna uma lista de URLs de licitações encontradas.
+    No MVP, retorna URLs de teste.
     """
     if not os.path.exists(download_path):
         os.makedirs(download_path)

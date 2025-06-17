@@ -5,7 +5,9 @@ import os
 
 def extract_text_from_document(file_path: str) -> str:
     """
-    Extrai texto de PDFs ou DOCX.
+    Extrai texto de arquivos PDF ou DOCX.
+    Retorna o texto extraído como string.
+    Se o arquivo não for encontrado ou não suportado, retorna string vazia.
     """
     text_content = ""
     if not os.path.exists(file_path):

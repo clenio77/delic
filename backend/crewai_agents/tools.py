@@ -8,8 +8,8 @@ import os
 @tool("Buscar Novas Licitações no Comprasnet")
 def buscar_novas_licitacoes(search_url: str) -> str:
     """
-    Busca novas licitações em um portal específico (ex: Comprasnet).
-    Retorna uma lista de URLs de licitações encontradas.
+    Tool CrewAI: Busca novas licitações em um portal (ex: Comprasnet).
+    Retorna uma lista de URLs de licitações encontradas em formato JSON.
     """
     print(f"Agente: Buscando novas licitações em {search_url}...")
     licitacoes = search_new_licitacoes_comprasnet(search_url=search_url)
@@ -18,8 +18,8 @@ def buscar_novas_licitacoes(search_url: str) -> str:
 @tool("Baixar Edital")
 def baixar_edital(url: str) -> str:
     """
-    Baixa o arquivo do edital de uma URL específica para a pasta de dados brutos.
-    Retorna o caminho do arquivo baixado.
+    Tool CrewAI: Baixa o arquivo do edital de uma URL específica ou retorna o caminho local.
+    Retorna o caminho do arquivo baixado ou local.
     """
     print(f"Agente: Tentando baixar edital de {url}...")
     download_path = "backend/data/raw_licitacoes"
@@ -31,7 +31,7 @@ def baixar_edital(url: str) -> str:
 @tool("Extrair Texto de Documento")
 def extrair_texto_documento(file_path: str) -> str:
     """
-    Extrai o conteúdo de texto de um arquivo de edital (PDF/DOCX).
+    Tool CrewAI: Extrai o conteúdo de texto de um arquivo de edital (PDF/DOCX).
     Retorna o texto limpo do documento.
     """
     print(f"Agente: Extraindo texto de {file_path}...")
@@ -43,8 +43,8 @@ def extrair_texto_documento(file_path: str) -> str:
 @tool("Salvar Dados da Licitação")
 def salvar_dados_licitacao(data_json: str) -> str:
     """
-    Salva os dados extraídos de uma licitação em um arquivo JSON.
-    Esta ferramenta acumula os resultados.
+    Tool CrewAI: Salva os dados extraídos de uma licitação em um arquivo JSON.
+    Acumula os resultados, evitando duplicatas simples por ID.
     """
     file_path = "backend/data/processed_licitacoes.json"
     

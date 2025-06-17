@@ -72,11 +72,21 @@ llm_instance = CustomLLM(openai_client)
 
 
 class LicitacaoAgents:
+    """
+    Define e instancia os agentes CrewAI para o pipeline de licitações:
+    - Coletor de Editais: busca e baixa editais.
+    - Analisador Básico de Edital: extrai campos-chave do texto.
+    - Estruturador de Dados: salva os dados processados em JSON.
+    """
     def __init__(self):
         # Passa a instância customizada do LLM para os agentes
         self.llm = llm_instance
 
     def coletor_de_editais(self):
+        """
+        Cria o agente responsável por buscar e baixar editais do Comprasnet.
+        Usa as tools: buscar_novas_licitacoes, baixar_edital.
+        """
         return Agent(
             role='Coletor de Editais',
             goal='Encontrar novas licitações no portal Comprasnet e baixar seus editais.',
@@ -88,6 +98,10 @@ class LicitacaoAgents:
         )
 
     def analisador_basico_de_edital(self):
+        """
+        Cria o agente responsável por analisar o texto do edital e extrair campos-chave.
+        Usa a tool: extrair_texto_documento.
+        """
         return Agent(
             role='Analisador Básico de Edital',
             goal='Extrair os 5-7 campos-chave mais críticos de um edital e gerar um resumo conciso.',
@@ -99,6 +113,10 @@ class LicitacaoAgents:
         )
 
     def estruturador_de_dados(self):
+        """
+        Cria o agente responsável por estruturar e salvar os dados extraídos das licitações.
+        Usa a tool: salvar_dados_licitacao.
+        """
         return Agent(
             role='Estruturador de Dados de Licitações',
             goal='Consolidar e formatar os dados extraídos das licitações em um arquivo JSON padronizado para consumo posterior.',

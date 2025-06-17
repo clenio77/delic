@@ -2,14 +2,18 @@ import React, { useState, useEffect } from 'react'; // Importa useState e useEff
 import './styles.css'; // Importa o arquivo CSS
 import LicitacaoCard from './components/LicitacaoCard'; // Importa o componente LicitacaoCard
 
+/**
+ * Componente principal da aplicação React.
+ * Responsável por buscar as licitações do backend e exibi-las em cards.
+ */
 function App() {
   const [licitacoes, setLicitacoes] = useState([]); // Estado para armazenar as licitações
   const [loading, setLoading] = useState(true); // Estado para indicar se está carregando
   const [error, setError] = useState(null); // Estado para armazenar erros
 
-  // useEffect para buscar dados da API ao montar o componente
+  // Busca as licitações da API ao montar o componente
   useEffect(() => {
-    // Novo endpoint para buscar as licitações
+    // Endpoint do backend para buscar as licitações
     const API_URL = '/api/licitacoes';
 
     fetch(API_URL)

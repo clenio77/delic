@@ -1,6 +1,10 @@
 import React from 'react';
 import '../styles.css'; // Pode ser necessário ajustar o caminho se o CSS for mais específico
 
+/**
+ * Componente de card para exibir informações de uma licitação.
+ * Recebe um objeto 'licitacao' como prop e exibe seus campos principais.
+ */
 function LicitacaoCard({ licitacao }) {
   // Verifica se o objeto licitacao existe antes de tentar acessar suas propriedades
   if (!licitacao) {

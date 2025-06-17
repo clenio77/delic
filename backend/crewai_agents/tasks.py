@@ -3,10 +3,21 @@ from crewai import Task
 from textwrap import dedent
 
 class LicitacaoTasks:
+    """
+    Define as tarefas (Tasks) do pipeline CrewAI para licitações:
+    - Buscar licitações
+    - Baixar e extrair edital
+    - Analisar edital
+    - Salvar dados processados
+    Cada método retorna uma Task CrewAI configurada para o agente correspondente.
+    """
     def __init__(self, agent_instance):
         self.agent_instance = agent_instance # Para acessar as ferramentas do agente
 
     def buscar_licitacoes_task(self, agent, search_url: str):
+        """
+        Task: Busca URLs de licitações no portal informado usando a tool de busca.
+        """
         return Task(
             description=dedent(f"""
                 Use a ferramenta 'Buscar Novas Licitações no Comprasnet' para encontrar URLs de licitações
@@ -21,6 +32,9 @@ class LicitacaoTasks:
         )
 
     def baixar_e_extrair_edital_task(self, agent, licitacao_url: str):
+        """
+        Task: Baixa o edital da URL e extrai o texto do documento usando as tools apropriadas.
+        """
         return Task(
             description=dedent(f"""
                 Use a ferramenta 'Baixar Edital' para fazer o download do edital da URL: {licitacao_url}.
@@ -34,6 +48,9 @@ class LicitacaoTasks:
         )
 
     def analisar_edital_basico_task(self, agent, edital_content: str, licitacao_url: str):
+        """
+        Task: Analisa o texto do edital e extrai campos-chave, gerando um JSON estruturado.
+        """
         return Task(
             description=dedent(f"""
                 Analise o conteúdo do edital fornecido abaixo para extrair os seguintes campos-chave:
@@ -75,6 +92,9 @@ class LicitacaoTasks:
         )
 
     def salvar_dados_task(self, agent, data_json: str):
+        """
+        Task: Salva o JSON de dados da licitação processada usando a tool apropriada.
+        """
         return Task(
             description=dedent(f"""
                 Use a ferramenta 'Salvar Dados da Licitação' para persistir o JSON de dados

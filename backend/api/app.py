@@ -12,10 +12,18 @@ app.mount("/", StaticFiles(directory="/app/frontend/build", html=True), name="st
 
 @app.get("/api")
 def read_root():
+    """
+    Endpoint de teste para verificar se a API está online.
+    Retorna uma mensagem simples.
+    """
     return {"Hello": "World"}
 
 @app.get("/api/licitacoes")
 def get_licitacoes():
+    """
+    Retorna a lista de licitações processadas, lidas do arquivo JSON.
+    Se o arquivo não existir, retorna lista vazia.
+    """
     file_path = os.path.join(os.path.dirname(__file__), '../data/processed_licitacoes.json')
     try:
         with open(file_path, 'r', encoding='utf-8') as f:

@@ -9,6 +9,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def run_licitacao_crew():
+    """
+    Executa o pipeline CrewAI para processar um edital de exemplo:
+    1. Extrai o texto do edital (PDF/DOCX) local.
+    2. Analisa o texto e extrai campos-chave.
+    3. Salva o resultado em JSON para consumo pelo frontend.
+    """
     print("Iniciando a Crew de Gestão de Licitações MVP...")
 
     # Instancia os agentes e as tarefas
