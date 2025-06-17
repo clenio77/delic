@@ -33,7 +33,7 @@ frontend/build/
 docker-compose*.yml
 
 # Dados sensíveis e arquivos de exemplo
-#backend/data/processed_licitacoes.json
+
 backend/data/raw_licitacoes/*
 !backend/data/raw_licitacoes/.gitkeep
 
